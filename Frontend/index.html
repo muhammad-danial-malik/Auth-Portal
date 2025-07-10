@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthPortal - Secure Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Additional styles specific to landing page */
+        .landing-container {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .landing-image {
+            flex: 1;
+            max-width: 500px;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .landing-image img {
+            margin: 5rem;
+            width: 100%;
+            height: auto;
+        }
+
+        .landing-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(99deg, #ff5e00, #f54562 54%, #c32de1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .landing-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 2.5rem;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .cta-primary {
+            background-image: linear-gradient(99deg, #ff5e00, #f54562 54%, #c32de1);
+            color: white;
+            box-shadow: 0 8px 8px -4px rgba(245, 69, 98, 0.12),
+                0 16px 24px 0 rgba(245, 69, 98, 0.24);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 12px -4px rgba(245, 69, 98, 0.16),
+                0 20px 28px 0 rgba(245, 69, 98, 0.32);
+        }
+
+        .cta-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            background: rgba(39, 42, 46, 0.5);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(99deg, #ff5e00, #f54562 54%, #c32de1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .landing-container {
+                flex-direction: column;
+                padding: 100px 5% 50px;
+                text-align: center;
+            }
+
+            .landing-content,
+            .landing-image {
+                max-width: 100%;
+            }
+
+            .landing-image {
+                margin-top: 50px;
+                max-width: 400px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .features {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background elements from previous design -->
+    <div class="landing-container">
+        <div class="landing-content">
+            <h1 class="landing-title">Secure Authentication Made Simple</h1>
+            <p class="landing-subtitle">
+                AuthPortal provides enterprise-grade security with a seamless user experience.
+                Protect your data while offering your users a frictionless authentication process.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="cta-button cta-primary">Sign In</a>
+                <a href="signup.html" class="cta-button cta-secondary">Create Account</a>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Bank-Level Security</h3>
+                    <p class="feature-desc">
+                        Military-grade encryption and multi-factor authentication to keep your data safe.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-desc">
+                        Optimized authentication flows that won't slow down your users.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="feature-title">Easy Integration</h3>
+                    <p class="feature-desc">
+                        Simple API and documentation for quick implementation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png" alt="Secure Authentication Illustration">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

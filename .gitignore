@@ -1,0 +1,55 @@
+# Node modules (recursively in all subprojects)
+**/node_modules/
+
+
+# Logs (anywhere in the repo)
+**/logs/
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+**/pids/
+**/*.pid
+**/*.seed
+**/*.pid.lock
+
+# dotenv environment variables (global and local)
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Build output
+**/dist/
+**/build/
+
+# OS generated files
+**/.DS_Store
+**/Thumbs.db
+
+# Optional npm cache directory
+**/.npm/
+
+# Editor directories and files
+**/.vscode/
+**/.idea/
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+
+# Dependency directories
+**/jspm_packages/
+
+# Coverage directory used by tools like istanbul
+**/coverage/
+
+# Output of 'npm pack'
+**/*.tgz
+
+# Parcel-bundler cache (if using it)
+**/.cache/
+
+# Temporary files
+**/Server Side/temp*.txt

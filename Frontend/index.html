@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuthPortal - Secure Authentication</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./Assets/css/styles.css" />
     <style>
         /* Additional styles specific to landing page */
         .landing-container {
@@ -54,6 +54,14 @@
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2rem;
             line-height: 1.6;
+        }
+
+        .landing-subtitle span {
+            background: linear-gradient(99deg, #ff5e00, #f54562 54%, #c32de1);
+            background-clip: text;
+            color: transparent;
+            font-size: 1.5rem;
+            font-weight: 500;
         }
 
         .cta-buttons {
@@ -181,13 +189,13 @@
         <div class="landing-content">
             <h1 class="landing-title">Secure Authentication Made Simple</h1>
             <p class="landing-subtitle">
-                AuthPortal provides enterprise-grade security with a seamless user experience.
+                <span>AuthPortal</span> provides enterprise-grade security with a seamless user experience.
                 Protect your data while offering your users a frictionless authentication process.
             </p>
 
             <div class="cta-buttons">
-                <a href="login.html" class="cta-button cta-primary">Sign In</a>
-                <a href="signup.html" class="cta-button cta-secondary">Create Account</a>
+                <a href="./Assets/pages/login.html" class="cta-button cta-primary">Sign In</a>
+                <a href="./Assets//pages//signup.html" class="cta-button cta-secondary">Create Account</a>
             </div>
 
             <div class="features">
@@ -226,7 +234,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+
 </body>
 
 </html>

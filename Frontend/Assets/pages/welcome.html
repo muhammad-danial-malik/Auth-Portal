@@ -305,24 +305,6 @@
         </div>
     </div>
 
-    <script>
-        // Temporary username placeholder
-        document.addEventListener('DOMContentLoaded', function () {
-            // Sign-out functionality
-            document.getElementById('signoutBtn').addEventListener('click', function () {
-                // Clear any user session data
-                localStorage.removeItem('authToken');
-                sessionStorage.clear();
-
-                // Redirect to login page
-                window.location.href = 'login.html';
-            });
-
-            // Future implementation will get username from registration
-            // const username = getUsernameFromRegistration();
-            // document.querySelector('.welcome-title').textContent = `Welcome, ${username}`;
-        });
-    </script>
 </body>
 
 </html>

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-    <link rel="stylesheet" href="./Assets/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <title>Sign Up</title>
 </head>
 
@@ -66,15 +67,20 @@
 
                 <div class="media-options">
                     <a href="#" class="field google">
-                        <img src="./Assets/images/google.png" alt="" class="google-img">
+                        <img src="../images/google.png" alt="" class="google-img">
                         <span>Login with Google</span>
                     </a>
                 </div>
             </div>
         </div>
+        <div id="global-alert" class="alert hidden">
+            <span id="alert-message"></span>
+            <span id="alert-close" onclick="hideAlert()">&times;</span>
+        </div>
     </section>
 
-    <script src="./Assets/js/script.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/register.js"></script>
 </body>
 
 </html>

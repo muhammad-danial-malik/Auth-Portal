@@ -142,6 +142,16 @@ header {
     border-bottom-width: 2px;
 }
 
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #1e2125 inset !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #f5f5f5;
+}
+
 .eye-icon {
     position: absolute;
     top: 50%;
@@ -267,6 +277,59 @@ a.google span {
     font-weight: 500;
     opacity: 0.8;
     color: #fff;
+}
+
+/* Base styles */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease;
+}
+
+/* Alert types */
+.alert.success {
+    background-color: #28a745;
+}
+
+.alert.error {
+    background-color: #dc3545;
+}
+
+/* 
+.alert.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.alert.info {
+    background-color: #17a2b8;
+} */
+
+
+/* Close button */
+#alert-close {
+    margin-left: auto;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hidden state */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 @media (max-width: 768px) {

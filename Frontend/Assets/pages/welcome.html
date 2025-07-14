@@ -261,7 +261,7 @@
             <div class="welcome-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h1 class="welcome-title">Welcome, User</h1> <!-- Temporary name placeholder -->
+            <h1 class="welcome-title" id="username">Welcome, User</h1> <!-- Temporary name placeholder -->
             <p class="welcome-subtitle">Your account is ready to use</p>
         </div>
 
@@ -305,6 +305,11 @@
         </div>
     </div>
 
+    <div id="global-alert" class="alert hidden">
+        <span id="alert-message"></span>
+        <span id="alert-close" onclick="hideAlert()">&times;</span>
+    </div>
+    <script src="../js/welcome.js"></script>
 </body>
 
 </html>

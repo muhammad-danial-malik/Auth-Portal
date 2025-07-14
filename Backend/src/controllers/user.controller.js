@@ -7,6 +7,8 @@ import jwt from "jsonwebtoken";
 const cookiesOptions = {
   httpOnly: true,
   secure: true,
+  path: "/",
+  sameSite: "none",
 };
 
 const generateAccessAndRefreshToken = async (userId) => {
@@ -94,7 +96,7 @@ const loginUser = asyncHandler(async (req, res) => {
     user._id
   );
 
-  const loggedInUser = await UserAccount.findById(user._Id).select(
+  const loggedInUser = await UserAccount.findById(user._id).select(
     "-password -refreshToken"
   );
 

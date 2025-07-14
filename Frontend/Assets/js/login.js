@@ -18,21 +18,17 @@ function hideAlert() {
   alertBox.classList.add("hidden");
 }
 
-const signUp_btn = document.querySelector("#signUpBtn_A");
+const login_btn = document.querySelector("#loginBtn_A");
 
-signUp_btn.addEventListener("click", async (e) => {
+login_btn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  const username = document.querySelector("#signUp_usernameInput").value;
-  const email = document.querySelector("#signUp_emailInput").value;
-  const password = document.querySelector("#signUp_passwordInput").value;
-  const confirmPassword = document.querySelector(
-    "#signUp_confPasswordInput"
-  ).value;
+  const email = document.querySelector("#login_emailInput").value;
+  const password = document.querySelector("#login_passwordInput").value;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!username || !email || !password || !confirmPassword) {
+  if (!email || !password) {
     showAlert("All fields are required", "error");
     return;
   }
@@ -47,31 +43,32 @@ signUp_btn.addEventListener("click", async (e) => {
     return;
   }
 
-  if (password != confirmPassword) {
-    showAlert("Make sure both password fields match exactly.", "error");
-    return;
-  }
-
-  const url = "http://localhost:8000/api/v1/users/register";
-
+  const url = "http://localhost:8000/api/v1/users/login";
   try {
     const response = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+      credentials: "include",
     });
 
     const result = await response.json();
+    const name = result.data.user.username;
+    console.log(name);
 
     if (response.ok) {
-      showAlert("Signup successful!", "success");
-
-      setTimeout(() => {
-        window.location.href = "./login.html";
-      }, 1500);
       console.log("Server Response:", result);
+      showAlert("login successful!", "success");
+
+      sessionStorage.setItem("name", name);
+
+      // setTimeout(() => {
+      //   window.location.href = "./welcome.html";
+      // }, 1500);
     } else {
-      showAlert(result.message || "Signup failed. Please try again.", "error");
+      showAlert(result.message || "login failed. Please try again.", "error");
     }
   } catch (error) {
     console.error("Error:", error);

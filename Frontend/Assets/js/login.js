@@ -64,9 +64,9 @@ login_btn.addEventListener("click", async (e) => {
 
       sessionStorage.setItem("name", name);
 
-      // setTimeout(() => {
-      //   window.location.href = "./welcome.html";
-      // }, 1500);
+      setTimeout(() => {
+        window.location.href = "./welcome.html";
+      }, 1500);
     } else {
       showAlert(result.message || "login failed. Please try again.", "error");
     }

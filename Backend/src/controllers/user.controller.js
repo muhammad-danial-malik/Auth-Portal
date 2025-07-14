@@ -8,7 +8,8 @@ const cookiesOptions = {
   httpOnly: true,
   secure: true,
   path: "/",
-  sameSite: "none",
+  sameSite: "None",
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 };
 
 const generateAccessAndRefreshToken = async (userId) => {
@@ -147,7 +148,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
       process.env.REFRESH_TOKEN_SECRET
     );
 
-    const user = await User.findById(decodedToken?._id);
+    const user = await UserAccount.findById(decodedToken?._id);
 
     if (!user) {
       throw new ApiError(401, "Invalid refresh token");
